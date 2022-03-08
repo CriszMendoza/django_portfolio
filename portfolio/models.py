@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-from email.mime import image
-from turtle import title
 from django.db import models
 from django.db.models.fields import CharField, URLField
 from django.db.models.fields.files import ImageField
