@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Posts</title>
+</head>
+
+<body>
+
+	<section>
+		<article>
+			<h2>{{ post.title}}</h2>
+			<p>{{ post.description }}</p>
+			<small>{{ post.date|date:'M d Y' }}</small>
+			<img src="/public/{{ post.image }}" alt={{post.title}}>
+		</article>
+
+	</section>
+</body>
+
+</html>
