@@ -1,30 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Posts</title>
-</head>
+{% block content %}
+{% for post in posts %}
 
-<body>
-	<h1>Posts</h1>
-
-	<section>
-		{% for post in posts %}
-
-		<article>
+<div class="p-3">
+	<div class="card card-body bg-black">
+		<div class="row">
+			<div class="col-3">
+				<img class='img-fluid' src="public/{{ post.image }}" alt={{post.title}}>
+			</div>
+		</div>
+		<div class="col-9">
 			<h2>{{ post.title}}</h2>
 			<small>{{ post.date }}</small>
 			<p>{{ post.description|truncatechars:150 }}</p>
-			<img src="public/{{ post.image }}" alt={{post.title}}>
-			<br>
-			<a href="{% url 'blog:post_detail' post.id %}">link del post</a>
-		</article>
+			<a class='btn btn-primary btn-sm' href="{% url 'blog:post_detail' post.id %}">Ver más</a>
+		</div>
 
-		{% endfor %}
+	</div>
+</div>
 
-	</section>
-</body>
 
-</html>
+
+{% endfor %}
+{% endblock %}
